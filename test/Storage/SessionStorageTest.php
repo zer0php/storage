@@ -16,6 +16,16 @@ class SessionStorageTest extends TestCase
     /**
      * @test
      */
+    public function toArray_WithoutSession_ReturnsEmptyArray()
+    {
+        unset($_SESSION);
+        $storage = new SessionStorage();
+        $this->assertEquals([], $storage->toArray());
+    }
+
+    /**
+     * @test
+     */
     public function get_WithData_ReturnsReferencedValue()
     {
         $_SESSION = [

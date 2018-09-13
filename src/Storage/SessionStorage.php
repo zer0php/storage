@@ -10,6 +10,9 @@ class SessionStorage extends AbstractStorage
 {
     public function __construct()
     {
+        if( !isset($_SESSION) ) {
+            $_SESSION = [];
+        }
         $this->setData($_SESSION);
     }
 }

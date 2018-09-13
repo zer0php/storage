@@ -1,19 +1,15 @@
 # ZeroPHP Storage
 
 
-ArrayStorage: 
-
 ```php
-use Zero\Storage\ArrayStorage;
-
-$data = [
-    'key' => 'value',
-    'keyNull' => null
-];
-
-$storage = new ArrayStorage($data); //or Zero\Storage\SessionStorage;
+$storage = new \Zero\Storage\ArrayStorage([
+  'key' => 'value',
+  'keyNull' => null
+]); 
+// $storage = new \Zero\Storage\SessionStorage(); 
 
 $storage->get('key'); //value
+$storage->get('not-exists', 'defaultValue'); //defaultValue
 
 $storage->key; //value
 $storage['key']; //value
@@ -23,15 +19,15 @@ $storage->exists('keyNull'); //true
 isset($storage->key); //true
 isset($storage['key']); //true
 
-$storage->set('test', 'value');
-$storage->test = value;
-$storage['test'] = value;
+$storage->set('newKey', 'value');
+$storage->newKey = value;
+$storage['newKey'] = value;
 
-$storage->has('test'); //true
+$storage->has('newKey'); //true
 
-$storage->remove('test');
-unset($storage->test);
-unset($storage['test']);
+$storage->remove('newKey');
+//unset($storage->newKey);
+//unset($storage['newKey']);
 
-$storage->has('test');//false
+$storage->has('test'); //false
 ```

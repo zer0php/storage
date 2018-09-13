@@ -1,5 +1,7 @@
 # ZeroPHP Storage
 
+[![Build Status](https://travis-ci.com/zer0php/storage.svg?branch=master)](https://travis-ci.com/zer0php/storage)
+[![Coverage Status](https://coveralls.io/repos/github/zer0php/storage/badge.svg?branch=master)](https://coveralls.io/github/zer0php/storage?branch=master)
 
 ```php
 $storage = new \Zero\Storage\ArrayStorage([

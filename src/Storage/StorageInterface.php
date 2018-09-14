@@ -37,7 +37,7 @@ interface StorageInterface extends Countable, JsonSerializable, Serializable, It
      * @param mixed $default
      * @return mixed|null
      */
-    public function &consume(string $key, $default = null);
+    public function &pop(string $key, $default = null);
 
     /**
      * @param string $key

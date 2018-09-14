@@ -31,13 +31,13 @@ class ArrayStorageTest extends TestCase
     /**
      * @test
      */
-    public function consume_WithData_ReturnsValueAndRemove()
+    public function pop_WithData_ReturnsValueAndRemove()
     {
         $data = [
             'test-key' => 'test-value'
         ];
         $storage = new ArrayStorage($data);
-        $value = $storage->consume('test-key');
+        $value = $storage->pop('test-key');
         $this->assertEquals('test-value', $value);
         $this->assertFalse($storage->exists('test-key'));
     }

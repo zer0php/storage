@@ -118,7 +118,7 @@ trait StorageTrait
     /**
      * {@inheritDoc}
      */
-    public function &consume(string $key, $default = null)
+    public function &pop(string $key, $default = null)
     {
         $value = &$this->get($key, $default);
         $this->remove($key);
